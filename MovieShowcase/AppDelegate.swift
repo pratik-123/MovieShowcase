@@ -15,7 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        navigationBarSettiongs()
         return true
     }
+    private func navigationBarSettiongs() {
+        let appearance = UINavigationBar.appearance()
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        appearance.isTranslucent = true
+    }
+
 }
 

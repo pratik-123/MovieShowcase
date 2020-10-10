@@ -10,8 +10,8 @@ import UIKit
 //MARK:- UIView extended methods
 extension UIView {
     /// Corner radius set
-    /// - Parameter cornerRadius: Radius value, defaultValue  =16
-    func setCornerRadius(cornerRadius: CGFloat = 16) {
+    /// - Parameter cornerRadius: Radius value, defaultValue  =8
+    func setCornerRadius(cornerRadius: CGFloat = 8) {
         layer.cornerRadius = cornerRadius
         layer.masksToBounds = true
     }

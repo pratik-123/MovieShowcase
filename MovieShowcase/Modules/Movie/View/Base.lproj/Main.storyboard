@@ -25,6 +25,20 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kFL-vL-Pxo">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="7ns-N6-FKi">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="CyG-Zt-fUb">
+                                            <rect key="frame" x="188.5" y="3.5" width="37" height="37"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="CyG-Zt-fUb" firstAttribute="centerY" secondItem="7ns-N6-FKi" secondAttribute="centerY" id="KII-y8-1J2"/>
+                                        <constraint firstItem="CyG-Zt-fUb" firstAttribute="centerX" secondItem="7ns-N6-FKi" secondAttribute="centerX" id="dga-I3-rX1"/>
+                                    </constraints>
+                                </view>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -40,6 +54,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="5ma-a8-zvm"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="CyG-Zt-fUb" id="LIU-xY-Rr1"/>
+                        <outlet property="footerView" destination="7ns-N6-FKi" id="CzD-tS-dEc"/>
                         <outlet property="labelNoDataFound" destination="BnY-yp-aoB" id="tSz-Qc-1EH"/>
                         <outlet property="tableViewList" destination="kFL-vL-Pxo" id="Sed-hU-Y7F"/>
                     </connections>

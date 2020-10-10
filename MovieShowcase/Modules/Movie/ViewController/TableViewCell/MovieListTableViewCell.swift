@@ -14,6 +14,7 @@ class MovieListTableViewCell: UITableViewCell {
     @IBOutlet weak var labelMovieName: PLTitleLabel!
     @IBOutlet weak var labelReleaseDate: PLSubTitleLabel!
     @IBOutlet weak var imageViewPoster: PLImageView!
+    @IBOutlet weak var labelOverview: PLSubTitleLabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,4 +29,14 @@ class MovieListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func cellDataSet(data : MovieListModel?) {
+        labelMovieName.text = data?.title
+        labelReleaseDate.text = data?.release_date
+        labelOverview.text = data?.overview
+        if let imageName = data?.poster_path {
+            let endPoint = APIManager.EndPoint.PosterImage(imageName: imageName)
+            let request = APIManager.EndPoint.generateRequest(for: endPoint)
+            imageViewPoster.setImage(forURL: request.url)
+        }
+    }
 }

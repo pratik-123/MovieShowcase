@@ -27,13 +27,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahv-fw-Y5P" customClass="PLSubTitleLabel" customModule="MovieShowcase" customModuleProvider="target">
-                                <rect key="frame" x="140" y="50.5" width="42" height="21"/>
+                                <rect key="frame" x="140" y="46.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="px4-yG-zgt" customClass="PLSubTitleLabel" customModule="MovieShowcase" customModuleProvider="target">
+                                <rect key="frame" x="140" y="71.5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2H-aG-kNq" customClass="PLButton" customModule="MovieShowcase" customModuleProvider="target">
                                 <rect key="frame" x="140" y="98" width="238" height="40"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" notEnabled="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ZMW-iz-7wk"/>
                                 </constraints>
@@ -44,18 +53,21 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="160" id="5Jf-vm-QvV"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ahv-fw-Y5P" secondAttribute="trailing" constant="20" id="6AK-8p-Tjy"/>
+                            <constraint firstItem="px4-yG-zgt" firstAttribute="top" secondItem="ahv-fw-Y5P" secondAttribute="bottom" constant="4" id="8h1-6X-q7d"/>
                             <constraint firstItem="ahv-fw-Y5P" firstAttribute="leading" secondItem="Sx6-8S-9cC" secondAttribute="leading" id="BQT-pX-LcW"/>
                             <constraint firstItem="Sx6-8S-9cC" firstAttribute="leading" secondItem="xUJ-pH-hXt" secondAttribute="leading" constant="140" id="BR4-eN-GTc"/>
                             <constraint firstAttribute="bottom" secondItem="R2H-aG-kNq" secondAttribute="bottom" constant="22" id="Ce6-eX-qDG"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Sx6-8S-9cC" secondAttribute="trailing" constant="20" id="P6d-YA-WvI"/>
-                            <constraint firstItem="ahv-fw-Y5P" firstAttribute="top" secondItem="Sx6-8S-9cC" secondAttribute="bottom" constant="8" id="V1P-fp-Z5M"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="px4-yG-zgt" secondAttribute="trailing" constant="20" id="SQT-MD-TZi"/>
+                            <constraint firstItem="ahv-fw-Y5P" firstAttribute="top" secondItem="Sx6-8S-9cC" secondAttribute="bottom" constant="4" id="V1P-fp-Z5M"/>
                             <constraint firstItem="R2H-aG-kNq" firstAttribute="leading" secondItem="Sx6-8S-9cC" secondAttribute="leading" id="bbG-qD-0h2"/>
                             <constraint firstItem="Sx6-8S-9cC" firstAttribute="top" secondItem="xUJ-pH-hXt" secondAttribute="top" constant="22" id="kJL-6m-3mi"/>
                             <constraint firstAttribute="trailing" secondItem="R2H-aG-kNq" secondAttribute="trailing" constant="20" id="mE2-5O-OvG"/>
+                            <constraint firstItem="px4-yG-zgt" firstAttribute="leading" secondItem="Sx6-8S-9cC" secondAttribute="leading" id="poe-xH-f0j"/>
                         </constraints>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="jHj-Uj-QAl" customClass="PLImageView" customModule="MovieShowcase" customModuleProvider="target">
-                        <rect key="frame" x="30" y="0.0" width="100" height="168"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="jHj-Uj-QAl" customClass="PLImageView" customModule="MovieShowcase" customModuleProvider="target">
+                        <rect key="frame" x="30" y="8" width="100" height="160"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="Not-xw-KUG"/>
                         </constraints>
@@ -63,7 +75,7 @@
                 </subviews>
                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="jHj-Uj-QAl" firstAttribute="top" secondItem="8k4-ma-rfm" secondAttribute="top" id="97d-UW-jjn"/>
+                    <constraint firstItem="jHj-Uj-QAl" firstAttribute="top" secondItem="8k4-ma-rfm" secondAttribute="top" constant="8" id="97d-UW-jjn"/>
                     <constraint firstAttribute="trailing" secondItem="xUJ-pH-hXt" secondAttribute="trailing" constant="8" id="Ne1-tN-ChN"/>
                     <constraint firstAttribute="bottom" secondItem="xUJ-pH-hXt" secondAttribute="bottom" constant="8" id="bgP-Jl-tNh"/>
                     <constraint firstItem="xUJ-pH-hXt" firstAttribute="leading" secondItem="8k4-ma-rfm" secondAttribute="leading" constant="8" id="lYZ-Jy-Sxx"/>
@@ -76,6 +88,7 @@
             <connections>
                 <outlet property="imageViewPoster" destination="jHj-Uj-QAl" id="d6c-dV-5jQ"/>
                 <outlet property="labelMovieName" destination="Sx6-8S-9cC" id="caj-ZD-iAc"/>
+                <outlet property="labelOverview" destination="px4-yG-zgt" id="JLe-Xj-Z20"/>
                 <outlet property="labelReleaseDate" destination="ahv-fw-Y5P" id="Njv-vA-mon"/>
                 <outlet property="viewBottomParent" destination="xUJ-pH-hXt" id="267-3F-ZmI"/>
             </connections>

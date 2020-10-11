@@ -38,11 +38,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2H-aG-kNq" customClass="PLButton" customModule="MovieShowcase" customModuleProvider="target">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2H-aG-kNq" customClass="PLButton" customModule="MovieShowcase" customModuleProvider="target">
                                 <rect key="frame" x="140" y="98" width="238" height="40"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" notEnabled="YES"/>
-                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ZMW-iz-7wk"/>
                                 </constraints>

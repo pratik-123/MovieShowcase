@@ -35,14 +35,22 @@ class MovieListViewController: BaseViewController {
     private func getMovieList() {
         self.displayActivityIndicator(onView: self.view)
         if viewModel.movieListBaseModel != nil {
+            ///For first time load more indicator not visible after then it will display when scroll
             showLoadMoreDataView(true)
         }
-        viewModel.getMoveiListData()
+        viewModel.getMovieListData()
     }
     
+    /// Footer view add for load more data to diaply indicator
+    /// - Parameter show: bool value for show/hide
     private func showLoadMoreDataView(_ show: Bool) {
-        footerView.isHidden = show ? true : true
-        activityIndicator.isHidden = show ? true : false
+        if show {
+            activityIndicator.startAnimating()
+            footerView.isHidden = false
+        } else {
+            activityIndicator.stopAnimating()
+            footerView.isHidden = true
+        }
     }
 
 }
@@ -124,5 +132,13 @@ extension MovieListViewController: UITableViewDataSource, UITableViewDelegate {
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let rowCount = viewModel.numberOfMovies()
+        if (indexPath.row == (rowCount - 1)) {
+            //last index visible to get more data
+            getMovieList()
+        }
     }
 }

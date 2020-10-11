@@ -20,9 +20,12 @@ final class MovieListViewModel {
         self.service = service
     }
     
-    func getMoveiListData() {
+    /// Movie list data get
+    func getMovieListData() {
         var pageNumber = 1
+        ///check page number with total number of page
         if let obj = movieListBaseModel, obj.page != obj.total_pages {
+            pageNumber = obj.page ?? pageNumber
             pageNumber += 1
         }
         service?.fetchMovieList(pageNumber: pageNumber, completion: { (result) in

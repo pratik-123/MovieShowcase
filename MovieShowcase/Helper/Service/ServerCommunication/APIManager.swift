@@ -36,7 +36,11 @@ struct APIManager {
         ///Get a list of movies
         case MovieList(pageNumber:Int)
         case PosterImage(imageName:String)
-        
+        case MovieDetails(id:Int)
+        case LogoImage(imageName:String)
+        case SimilarMovieDetails(id:Int, pageNumber:Int)
+        case MovieCreditsDetails(id:Int)
+        case MovieReviewsDetails(id:Int)
         /// Generate request data based on request endpoint
         /// - Parameter endPoint: endpoint
         /// - Returns: Request model
@@ -54,6 +58,36 @@ struct APIManager {
                 var imageURL = APIManager.imageURL
                 imageURL.append(contentsOf: "t/p/w185/\(imageName)")
                 let request = RequestModel(url: imageURL)
+                return request
+            case .MovieDetails(let id):
+                requestURL.append("movie/\(id)?api_key=")
+                requestURL.append(APIManager.apiKey)
+                requestURL.append("&language=en-US")
+                let request = RequestModel(url: requestURL)
+                return request
+            case .SimilarMovieDetails(let id, let pageNumber):
+                requestURL.append("movie/\(id)/similar?api_key=")
+                requestURL.append(APIManager.apiKey)
+                requestURL.append("&language=en-US")
+                requestURL.append("&page=\(pageNumber)")
+                let request = RequestModel(url: requestURL)
+                return request
+            case .LogoImage(let imageName):
+                var imageURL = APIManager.imageURL
+                imageURL.append(contentsOf: "t/p/w154/\(imageName)")
+                let request = RequestModel(url: imageURL)
+                return request
+            case .MovieCreditsDetails(let id):
+                requestURL.append("movie/\(id)/credits?api_key=")
+                requestURL.append(APIManager.apiKey)
+                let request = RequestModel(url: requestURL)
+                return request
+            case .MovieReviewsDetails(let id):
+                requestURL.append("movie/\(id)/reviews?api_key=")
+                requestURL.append(APIManager.apiKey)
+                let request = RequestModel(url: requestURL)
+                requestURL.append("&language=en-US")
+                requestURL.append("&page=1")
                 return request
             }
         }

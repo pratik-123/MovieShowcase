@@ -11,6 +11,7 @@ import UIKit
 class MovieListViewController: BaseViewController {
     @IBOutlet weak var tableViewList: UITableView!
     @IBOutlet weak var labelNoDataFound: PLTitleLabel!
+    
     @IBOutlet weak var footerView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -131,7 +132,14 @@ extension MovieListViewController: UITableViewDataSource, UITableViewDelegate {
     }
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if let nextVC = storyboard?.instantiateViewController(withIdentifier: "MovieDetailsViewController") as? MovieDetailsViewController {
+            if  let movie = viewModel.movie(at: indexPath.row) {
+                nextVC.viewModel = MovieDetailsViewModel(movie: movie)
+            }
+            navigationController?.navigationBar.isTranslucent = false
+            navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1333333333, green: 0.1529411765, blue: 0.1803921569, alpha: 1)
+            navigationController?.pushViewController(nextVC, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

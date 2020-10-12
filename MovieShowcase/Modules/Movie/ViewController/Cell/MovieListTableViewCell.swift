@@ -31,7 +31,7 @@ class MovieListTableViewCell: UITableViewCell {
 
     func cellDataSet(data : MovieListModel?) {
         labelMovieName.text = data?.title
-        labelReleaseDate.text = data?.release_date
+        labelReleaseDate.text = data?.displayDate
         labelOverview.text = data?.overview
         if let imageName = data?.poster_path {
             let endPoint = APIManager.EndPoint.PosterImage(imageName: imageName)

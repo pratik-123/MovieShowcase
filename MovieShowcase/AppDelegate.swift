@@ -20,8 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     private func navigationBarSettiongs() {
         let appearance = UINavigationBar.appearance()
-        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
         appearance.isTranslucent = true
+        appearance.tintColor =  #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        appearance.barTintColor = #colorLiteral(red: 0.1333333333, green: 0.1529411765, blue: 0.1803921569, alpha: 1)
+        appearance.shadowImage = UIImage()
     }
 
 }

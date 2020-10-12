@@ -16,3 +16,17 @@ extension UIView {
         layer.masksToBounds = true
     }
 }
+extension String {
+    
+    /// Date formate change
+    func dateFormateChange(currentDateFormate: DateFormater, returnDateFormate: DateFormater = .DisplayFormate) -> String? {
+        let dateFormate = DateFormatter()
+        dateFormate.dateFormat = currentDateFormate.rawValue
+        if let convertDate = dateFormate.date(from: self) {
+            dateFormate.dateFormat = returnDateFormate.rawValue
+            let returnDate = dateFormate.string(from: convertDate)
+            return returnDate
+        }
+        return nil
+    }
+}

@@ -5,7 +5,7 @@ MovieShowcase sample project created using Swift language with MVVM architecture
 - MVVM architecture
 - Asynchronously data fetch
 - Codable protocol use with generic
-
+- Impliment load more data in tableview and collectionview 
 
 # Following pods are use
 - SDWebImage use for cache image
